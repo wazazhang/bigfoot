@@ -29,14 +29,14 @@ function BagManagementConfigFunc()
 		{[5]=true}
 	);
 
-	ModManagement_RegisterCheckBox(
-		"BagManagement",
-		BF_BANK_OPEN_ALL_BAGS,
-		nil,
-		"EnabelOpenAllBagsOnBank",
-		1,
-		BagManage_BankOpenAll
-	);
+	-- ModManagement_RegisterCheckBox(
+		-- "BagManagement",
+		-- BF_BANK_OPEN_ALL_BAGS,
+		-- nil,
+		-- "EnabelOpenAllBagsOnBank",
+		-- 1,
+		-- BagManage_BankOpenAll
+	-- );
 
 	ModManagement_RegisterCheckBox(
 		"BagManagement",

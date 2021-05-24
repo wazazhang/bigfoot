@@ -1,4 +1,4 @@
-## Interface: 11306
+## Interface: 20501
 ## Title: HandyNotes_NPCs (Classic)
 ## Version: 1.23
 ## Notes: Shows locations of various old world npcs
@@ -13,7 +13,6 @@ locales\Locales.xml
 
 data.lua
 vendorData.lua
-itemData.lua
 itemData.lua
 weaponskills.lua
 HandyNotes_NPCs (Classic).lua

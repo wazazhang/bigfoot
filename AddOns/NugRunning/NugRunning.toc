@@ -1,17 +1,18 @@
-## Interface: 11306
+## Interface: 20501
 ## Title: NugRunning
 ## Notes: Spelltimers
 ## Author: d87
 ## SavedVariablesPerCharacter: NRunDB_Char
 ## SavedVariables: NRunDB_Global, NugRunningConfigCustom
-## Version: 9.0.1-classic
+## Version: 9.1-bcc3
 ## X-WoWI-ID: 10440
 ## X-Curse-Project-ID: 27470
 ## Dependencies: BigFoot
 ## X-Revision: BigFoot
 
 helpers.lua
-classic.config.lua
+config.lua
+config.tbc.lua
 NugRunning.lua
 frame.lua
 special.lua

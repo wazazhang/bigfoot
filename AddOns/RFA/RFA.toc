@@ -1,8 +1,8 @@
-## Interface: 11306
+## Interface: 20501
 ## Title: Report &Feedback Assistant
 ## Title-zhCN: 举报反馈辅助
 ## Author: Netease
 ## Version: 1.0.0
 ## X-Revision: BigFoot
 
-Load.xml
+#Load.xml

@@ -228,7 +228,7 @@ function TotemTimers:TotemEvent(event, arg1, arg2, arg3)
         self.timer.StopQuiet = true
         self.timer:Stop(1)
         --self.rangeCount:SetText("")
-    elseif event == "UNIT_SPELLCAST_SUCCEEDED" and self.timer.nr == 3 and arg3 == SpellIDs.EnamoredWaterSpirit then
+    elseif event == "UNIT_SPELLCAST_SUCCEEDED" and self.timer.nr == 3 and arg3 == 24854 then --SpellIDs.EnamoredWaterSpirit
         self.timer:Start(1,24,24)
     end
 end

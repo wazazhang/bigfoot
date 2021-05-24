@@ -77,10 +77,7 @@ do
 
 		if (BigFoot_SysTemSetTab['UtilsPatchVersion'] ~= patchVersion) then
 			SetCVar("autoLootRate", "0")						--移除自动拾取多件物品时的延迟
-			SetCVar("lootUnderMouse", "1")						--鼠标位置打开拾取
 			-- SetCVar("overrideArchive", "0")						--反和谐
-			SetCVar("autoLootDefault", "1")						--自动拾取
-			SetCVar("instantQuestText", "1")					--立即显示任务文本
 			-- SetCVar("nameplateMaxDistance", "6e1")              --扩大姓名板显示范围到60码
 			SetCVar("chatClassColorOverride", "0")				--显示聊天职业颜色
 			SetCVar("ShowClassColorInNameplate", "1")			--显示姓名版职业颜色

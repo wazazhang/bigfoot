@@ -28,14 +28,14 @@ local ufdefault ={
 			point="TOPLEFT"
 		},
 	}, Bartender4.UnitBar.defaults),
-	-- ["FocusFrame"] = Bartender4:Merge({
-		-- enabled = true,
-		-- position={
-			-- x = -344,
-			-- y = 143,
-			-- point="CENTER"
-		-- },
-	-- }, Bartender4.UnitBar.defaults),
+	["FocusFrame"] = Bartender4:Merge({
+		enabled = true,
+		position={
+			x = -344,
+			y = 143,
+			point="CENTER"
+		},
+	}, Bartender4.UnitBar.defaults),
 	["BuffFrame"] = Bartender4:Merge({
 		enabled = true,
 		position={
@@ -139,7 +139,7 @@ local defaults = {
 UnitFrames.frames= {
 	PlayerFrame,
 	TargetFrame,
-	-- FocusFrame,
+	FocusFrame,
 	BuffFrame,
 	MinimapCluster,
 	PartyMemberFrame1,
@@ -187,12 +187,12 @@ end
 
 function UnitFrames:OnEnable()
 	self.vehicle_frame = self.vehicle_frame or CreateFrame("Frame")
-	-- self.vehicle_frame:RegisterEvent("UNIT_ENTERED_VEHICLE")
-	-- self.vehicle_frame:SetScript("OnEvent",function()
-		-- for i,frame in ipairs(self.frames) do
-			-- frame.bar:Show()
-		-- end
-	-- end)
+	self.vehicle_frame:RegisterEvent("UNIT_ENTERED_VEHICLE")
+	self.vehicle_frame:SetScript("OnEvent",function()
+		for i,frame in ipairs(self.frames) do
+			frame.bar:Show()
+		end
+	end)
 	-------------这里为加载移动窗体的地方。标示一下---------------------
 	for i,frame in ipairs(self.frames) do
 		--TODO: enabled?
@@ -208,8 +208,8 @@ function UnitFrames:OnEnable()
 	hooksecurefunc("SetCVar",function(key,val)
 		if key == "uiscale" then
 			self.db.profile.uiScale = val
-		elseif key == "useUiScale" then
-			self.db.profile.useUiScale = val
+		-- elseif key == "useUiScale" then
+			-- self.db.profile.useUiScale = val
 		end
 	end)
 
@@ -237,11 +237,11 @@ function UnitFrames:ApplyConfig()
 		SetCVar("uiscale",1)
 	end
 
-	if self.db.profile.useUiScale and tonumber(self.db.profile.useUiScale)  then
-		SetCVar("useUiScale",self.db.profile.useUiScale)
-	else
-		SetCVar("useUiScale",1)
-	end
+	-- if self.db.profile.useUiScale and tonumber(self.db.profile.useUiScale)  then
+		-- SetCVar("useUiScale",self.db.profile.useUiScale)
+	-- else
+		-- SetCVar("useUiScale",1)
+	-- end
 
 	-- for _name,_setting in pairs(self.db.profile.chatframes) do
 		-- local bShow,bDocked

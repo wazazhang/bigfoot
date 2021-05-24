@@ -9,6 +9,7 @@ NugRunningConfig.activations = {}
 NugRunningConfig.event_timers = {}
 NugRunningConfig.totems = {}
 NugRunningConfig.casts = {}
+NugRunningConfig.usableTriggerSpells = {}
 local AFFILIATION_MINE = COMBATLOG_OBJECT_AFFILIATION_MINE
 local AFFILIATION_PARTY_OR_RAID = COMBATLOG_OBJECT_AFFILIATION_RAID + COMBATLOG_OBJECT_AFFILIATION_PARTY
 local AFFILIATION_OUTSIDER = COMBATLOG_OBJECT_AFFILIATION_OUTSIDER
@@ -83,7 +84,7 @@ end
 
 
 helpers.GetCP = function()
-    if not NugRunning.cpNow then return GetComboPoints("player", "target") end
+    if not NugRunning.cpNow then return UnitPower("player", Enum.PowerType.ComboPoints) end
     return NugRunning.cpWas > NugRunning.cpNow and NugRunning.cpWas or NugRunning.cpNow
 end
 helpers.Glyph = function (gSpellID)
@@ -105,20 +106,11 @@ helpers.Anchor = function(name, opts)
     NugRunningConfig.anchors[name] = opts
 end
 
-local SpellMixin = _G.Spell
-helpers.spellNameToID = {}
-
-helpers.AddSpellNameRecognition = function(lastRankID)
-    local spellName = GetSpellInfo(lastRankID)
-    helpers.spellNameToID[spellName] = lastRankID
-end
-
 helpers.Spell = function(id, opts)
     if not opts then NugRunningConfig[id] = opts; return end
     if opts.singleTarget then opts.target = "target" end
     if opts.affiliation == "raid" then opts.affiliation = AFFILIATION_PARTY_OR_RAID end
     if opts.affiliation == "any" then opts.affiliation = AFFILIATION_OUTSIDER end
-
     if type(id) == "table" then
         local clones = id
         id = table.remove(clones, 1) -- extract first spell id from the last as original
@@ -178,6 +170,7 @@ helpers.Cast = function(id, opts)
         id = table.remove(clones, 1) -- extract first spell id from the last as original
         opts.clones = clones
     end
+
     if opts then
         opts.localname = GetSpellInfo(id)
         if not opts.localname then print("nrun: misssing spell #"..id) return end

@@ -1,6 +1,6 @@
-﻿## Interface: 11306
+﻿## Interface: 20501
 ## Author: Lag
-## Version: v1.5.9
+## Version: v2.1.0
 ## Dependencies: AtlasLootClassic
 ## LoadOnDemand: 1
 ## Title: AtlasLootClassic |cFF0099FF[Dungeons and Raids]|r
@@ -17,4 +17,5 @@
 Locales\Locales.xml
 
 data.lua
+data-tbc.lua
 droprate.lua

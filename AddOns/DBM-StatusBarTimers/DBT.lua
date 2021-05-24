@@ -607,11 +607,11 @@ function DBT:UpdateBars(sortBars)
 	end
 	for i, bar in ipairs(largeBars) do
 		bar.frame:ClearAllPoints()
-		bar.frame:SetPoint("TOP", largeBarsAnchor, "TOP", i * self.Options.HugeBarXOffset, (i * (self.Options.Height + self.Options.HugeBarYOffset)) * (self.Options.ExpandUpwardsLarge and 1 or -1))
+		bar.frame:SetPoint("TOP", largeBarsAnchor, "TOP", (i - 1) * self.Options.HugeBarXOffset, ((i - 1) * (self.Options.Height + self.Options.HugeBarYOffset)) * (self.Options.ExpandUpwardsLarge and 1 or -1))
 	end
 	for i, bar in ipairs(smallBars) do
 		bar.frame:ClearAllPoints()
-		bar.frame:SetPoint("TOP", smallBarsAnchor, "TOP", i * self.Options.BarXOffset, (i * (self.Options.Height + self.Options.BarYOffset)) * (self.Options.ExpandUpwards and 1 or -1))
+		bar.frame:SetPoint("TOP", smallBarsAnchor, "TOP", (i - 1) * self.Options.BarXOffset, ((i - 1) * (self.Options.Height + self.Options.BarYOffset)) * (self.Options.ExpandUpwards and 1 or -1))
 	end
 end
 
@@ -887,12 +887,13 @@ function barPrototype:Update(elapsed)
 		isEnlarged = true
 		tinsert(largeBars, self)
 		self:ApplyStyle()
+		DBT:UpdateBars(true)
 	end
-	DBT:UpdateBars()
 	if not paused and (timerValue <= enlargeTime) and not self.small and not isEnlarged and isMoving ~= "enlarge" and DBT.Options.HugeBarsEnabled then
 		self:RemoveFromList()
 		self:Enlarge()
 	end
+	DBT:UpdateBars()
 end
 
 function barPrototype:RemoveFromList()
@@ -1091,7 +1092,7 @@ function barPrototype:AnimateEnlarge(elapsed)
 		self.moving = nil
 		self.enlarged = true
 		tinsert(largeBars, self)
-		DBT:UpdateBars()
+		DBT:UpdateBars(true)
 		self:ApplyStyle()
 	end
 end

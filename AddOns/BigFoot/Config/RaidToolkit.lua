@@ -7,7 +7,6 @@ function RaidToolkitConfigFunc()
 	local ThreatString ={}
 	local RecountString ={}
 	local DecursiveString ={}
-	local playerClass = select(2, UnitClass("player"));
 
 	RecountString.colorText = "(|cff808080Recount|r)"
 	SkadaString.colorText = "(|cff808080Skada|r)"
@@ -126,7 +125,7 @@ function RaidToolkitConfigFunc()
 		end
 	end
 
-	if ( IsConfigurableAddOn("Recount") or IsConfigurableAddOn("DBM-Core") or IsConfigurableAddOn("Grid") or IsConfigurableAddOn("RaidAlerter") or IsConfigurableAddOn("Skada") or IsConfigurableAddOn("MeetingStone") or IsConfigurableAddOn("AngryKeystones") or IsConfigurableAddOn("Omen") or (IsConfigurableAddOn("Decursive") and (playerClass ~= "WARRIOR" and playerClass ~= "ROGUE" and playerClass ~= "DEATHKNIGHT") ) ) then
+	if ( IsConfigurableAddOn("Recount") or IsConfigurableAddOn("DBM-Core") or IsConfigurableAddOn("Grid") or IsConfigurableAddOn("RaidAlerter") or IsConfigurableAddOn("Skada") or IsConfigurableAddOn("MeetingStone") or IsConfigurableAddOn("AngryKeystones") or IsConfigurableAddOn("Omen") or IsConfigurableAddOn("Decursive") ) then
 		ModManagement_RegisterMod(
 			"RaidToolkit",
 			"Interface\\Icons\\INV_Bijou_Orange",

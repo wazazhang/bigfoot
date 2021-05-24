@@ -1,10 +1,10 @@
-## Interface: 11306
+## Interface: 20501
 ## Title: TotemTimers
 ## Title-zhCN: [大脚][集]萨满图腾助手
 ## Title-zhTW: [大腳][集]薩滿圖騰助手
 ## Notes: |cff00ff00TotemTimers|r
 ## Author:  Xianghar
-## Version: 1.08
+## Version: 1.09.2
 ## SavedVariables: TotemTimers_GlobalSettings, TotemTimers_Profiles
 ## OptionalDeps: cyCircled, Masque, !ClassColors, rActionButtonStyler
 ## LoadManagers: AddonLoader
@@ -26,6 +26,7 @@ Animation.lua
 Bindings.lua
 XiTimers.lua
 XiTimers.xml
+ToolTips.lua
 ToolTips.lua
 TotemSets.xml
 TotemSets.lua

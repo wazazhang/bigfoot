@@ -85,7 +85,7 @@ M.shownlist = {
 };
 -- Create Frames
 function M:CreateCompareFrame(name)
-	local f = CreateFrame("Frame", name, UIParent);
+	local f = CreateFrame("Frame", name, UIParent, BackdropTemplateMixin and "BackdropTemplate");
 	f:Hide();
 	f:SetToplevel(true);
 	f:SetMovable(true);

@@ -85,7 +85,7 @@
 		</Scripts>
 	</Button>
 
-	<Frame name="MkQL_Main_Frame" parent="UIParent" movable="true" resizable="true" frameStrata="LOW" toplevel="true" hidden="true">
+	<Frame name="MkQL_Main_Frame" parent="UIParent" movable="true" resizable="true" frameStrata="LOW" toplevel="true" hidden="true" inherits="BackdropTemplate">
 		<Size>
 			<AbsDimension x="256" y="512"/>
 		</Size>

@@ -1,14 +1,13 @@
 ## Interface: 20501
-## Title: ClassicCodex core
-## Title-zhCN: [大脚][集]任务助手 (核心)
-## TItle-zhTW: [大腳][集]任務助手 (核心)
 ## Notes: |cff00ff00ClassicCodex|r
+## Title: ClassicCodex core
+## Title-zhCN: ClassicCodex 任务助手 (核心)
+## Title-zhTW: ClassicCodex 任務助手 (核心)
 ## Author: Pgarneau, Shagu, SwimmingTiger
-## Version: v1.4.2
+## Version: v1.4.3
 ## SavedVariablesPerCharacter: CodexConfig, CodexHiddenQuests, CodexBrowserFavorites, CodexColors
 ## Dependencies: ClassicCodex-loader
 ## LoadOnDemand: 1
-
 ## X-Curse-Project-ID: 351302
 ## X-WoWI-ID: 25442
 ## X-Revision: BigFoot

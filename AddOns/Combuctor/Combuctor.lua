@@ -122,7 +122,7 @@ function Combuctor:GetBaseProfile(ratio)
 		},
 
 		bank = {
-			bags = {-1,5, 6, 7, 8, 9, 10},
+			bags = {-1,5, 6, 7, 8, 9, 10,11},
 			position = {'LEFT'},
 			showBags = true,	--第一次默认开
 			w = 560,

@@ -199,9 +199,9 @@ local defaults = {
     dotticks = true,
     textureName = "Aluminium",
     nptextureName = "Aluminium",
-    nameFont = { font = defaultFont, size = 10, alpha = 0.5 },
-    timeFont = { font = defaultFont, size = 8, alpha = 1 },
-    stackFont = { font = defaultFont, size = 12 },
+    nameFont = { font = defaultFont, size = 10, alpha = 0.5, outline = false },
+    timeFont = { font = defaultFont, size = 8, alpha = 1, outline = false },
+    stackFont = { font = defaultFont, size = 12, outline = true },
 }
 
 
@@ -284,6 +284,7 @@ function NugRunning.PLAYER_LOGIN(self,event,arg1)
         table.wipe(tempTable)
         for spellID, opts in pairs(config[category]) do
             if not cloneIDs[spellID] and opts.clones then
+                opts.clones[spellID] = nil -- Removing possible input of original spell ID into clone list
                 for i, additionalSpellID in ipairs(opts.clones) do
                     tempTable[additionalSpellID] = opts
                     cloneIDs[additionalSpellID] = spellID

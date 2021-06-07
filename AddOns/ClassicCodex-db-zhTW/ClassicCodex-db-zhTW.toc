@@ -4,7 +4,7 @@
 ## Title-zhCN: ClassicCodex 繁体中文数据
 ## Title-zhTW: ClassicCodex 繁體中文數據
 ## Author: Pgarneau, Shagu, SwimmingTiger
-## Version: v1.4.3
+## Version: v1.4.4
 ## Dependencies: ClassicCodex-loader
 ## LoadOnDemand: 1
 ## X-Curse-Project-ID: 351302

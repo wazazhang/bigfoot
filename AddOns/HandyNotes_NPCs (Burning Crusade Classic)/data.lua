@@ -585,6 +585,9 @@ nodes[1954] = {
 		name = L["Zalle"],
 		npcID = 16611,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -1297,6 +1300,9 @@ nodes[1947] = {
 		name = L["Bildine"],
 		npcID = 16757,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -7573,6 +7579,9 @@ nodes[1453] = {
 		name = L["Kyra Boucher"],
 		npcID = 1275,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -7639,6 +7648,9 @@ nodes[1453] = {
 		name = L["Owen Vaughn"],
 		npcID = 1308,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -7715,6 +7727,9 @@ nodes[1453] = {
 		name = L["Brother Cassius"],
 		npcID = 1351,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -9406,6 +9421,9 @@ nodes[1454] = {
 		name = L["Horthus"],
 		npcID = 3323,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -9438,6 +9456,9 @@ nodes[1454] = {
 		name = L["Hagrus"],
 		npcID = 3335,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -9478,6 +9499,9 @@ nodes[1454] = {
 		name = L["Magenius"],
 		npcID = 3351,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -10335,6 +10359,9 @@ nodes[1455] = {
 		name = L["Barim Jurgenstaad"],
 		npcID = 5110,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -10385,6 +10412,9 @@ nodes[1455] = {
 		name = L["Ginny Longberry"],
 		npcID = 5151,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -11093,6 +11123,9 @@ nodes[1456] = {
 		name = L["Chepi"],
 		npcID = 8361,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -12046,6 +12079,9 @@ nodes[1457] = {
 		name = L["Alaindia"],
 		npcID = 3562,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -12099,6 +12135,9 @@ nodes[1457] = {
 		name = L["Cyroen"],
 		npcID = 4220,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -12802,6 +12841,9 @@ nodes[1458] = {
 		name = L["Thomas Mordan"],
 		npcID = 4562,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -12824,6 +12866,9 @@ nodes[1458] = {
 		name = L["Hannah Akeley"],
 		npcID = 4575,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -13432,6 +13477,9 @@ nodes[1955] = {
 		name = L["Amshesha Stilldark"],
 		npcID = 19235,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -13500,6 +13548,9 @@ nodes[1955] = {
 		name = L["Fantei"],
 		npcID = 19678,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -27110,6 +27161,9 @@ nodes[1451] = {
 		name = L["Khur Hornstriker"],
 		npcID = 15175,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -37423,6 +37477,9 @@ nodes[1444] = {
 		name = L["Tarhus"],
 		npcID = 3500,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -37430,6 +37487,9 @@ nodes[1444] = {
 		name = L["Jadenvis Seawatcher"],
 		npcID = 3700,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -46704,6 +46764,9 @@ nodes[1425] = {
 		name = L["Mystic Yayo'jin"],
 		npcID = 14739,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Horde",
 	},
@@ -78244,6 +78307,9 @@ nodes[1437] = {
 		name = L["Falkan Armonis"],
 		npcID = 1463,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -79634,6 +79700,9 @@ nodes[1431] = {
 		name = L["Alyssa Eva"],
 		npcID = 1673,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Alliance",
 	},
@@ -91892,6 +91961,9 @@ nodes[1944] = {
 		name = L["Magus Zabraxis"],
 		npcID = 16829,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -92052,6 +92124,9 @@ nodes[1944] = {
 		name = L["Lursa Sunfallow"],
 		npcID = 18998,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -92059,6 +92134,9 @@ nodes[1944] = {
 		name = L["Vodesiin"],
 		npcID = 19004,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -92202,6 +92280,9 @@ nodes[1946] = {
 		name = L["Seer Janidi"],
 		npcID = 18017,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},
@@ -92359,6 +92440,9 @@ nodes[1949] = {
 		name = L["Noko Moonwhisper"],
 		npcID = 20915,
 		category = "vendors",
+		subcategories = {
+			reagent = true,
+		},
 		description = L["Reagents"],
 		faction = "Neutral",
 	},

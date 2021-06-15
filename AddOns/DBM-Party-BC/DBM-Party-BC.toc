@@ -25,7 +25,7 @@
 ## X-Curse-Project-ID: 314994
 ## X-WoWI-ID: 24904
 ## X-Wago-ID: xZKxZENk
-## Version: 2.5.4
+## Version: 2.5.5
 ## X-Revision: BigFoot
 
 localization.en.lua
@@ -60,6 +60,7 @@ Coil_Steamvault\Kalithresh.lua
 Auct_Crypts\Shirrak.lua
 Auct_Crypts\Maladaar.lua
 
+Auct_Tombs\AuctTombsTrash.lua
 Auct_Tombs\Pandemonius.lua
 Auct_Tombs\Tavarok.lua
 Auct_Tombs\Shaffar.lua

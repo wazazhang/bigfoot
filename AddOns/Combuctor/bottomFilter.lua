@@ -52,6 +52,7 @@ function BottomTab:OnClick()
 end
 
 StaticPopupDialogs["WANT_TO_BUY_REAGENTBANK_TAB"] = {
+	preferredIndex = STATICPOPUP_NUMDIALOGS,
 	text = CONFIRM_BUY_REAGNETBANK_TAB,
 	button1 = YES,
 	button2 = NO,
@@ -140,7 +141,7 @@ function BottomFilter:UpdateFilters()
 		if not parent.isBank and set.parent == L.All then
 			isFirstSideFilter = true;
 		end
-		
+
 		if parent:HasSubSet(set.name, set.parent) then
 			numFilters = numFilters + 1
 			self.buttons[numFilters]:Set(set)

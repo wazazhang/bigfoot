@@ -214,7 +214,7 @@
         </Anchors>
         <Size x="40" y="15"></Size>
     </Button>	
-    <Frame name="SpyStatsFrame" parent="UIParent" frameStrata="MEDIUM" movable="true" toplevel="true" enableMouse="true" hidden="true">
+    <Frame name="SpyStatsFrame" parent="UIParent" frameStrata="MEDIUM" movable="true" toplevel="true" enableMouse="true" hidden="true" inherits="BackdropTemplate">
         <Size x="1100" y="610" />		
         <Anchors>
             <Anchor point="CENTER" />
@@ -376,14 +376,14 @@
                             </OnClick>
                         </Scripts>
                     </Button> 
-                    <Frame name="$parentTabContentFrame">
+                    <Frame name="$parentTabContentFrame" inherits="BackdropTemplate">
                         <Anchors>
                             <Anchor point="TOPLEFT">
                                 <Offset x="0" y="-22" />
                             </Anchor>
                             <Anchor point="BOTTOMRIGHT"></Anchor>
                         </Anchors>
-                        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+                        <Backdrop bgFile="Interface/Tooltips/UI-Tooltip-Background" edgeFile="Interface/Tooltips/UI-Tooltip-Border" tile="true">
                             <EdgeSize>
                                 <AbsValue val="16"></AbsValue>
                             </EdgeSize>
@@ -665,6 +665,14 @@
                         </Frames>
                         <Scripts>
                             <OnLoad>
+								self:SetBackdrop({
+									bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+									edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+									tile = true,
+									tileEdge = true,
+									tileSize = 16,
+									edgeSize = 32,
+									insets = { left = 4, right = 4, top = 4, bottom = 4 },})
                                 self:SetBackdropColor(0,0,0,.5)
                                 self:SetFrameLevel(self:GetParent():GetFrameLevel() - 1)
                             </OnLoad>
@@ -678,7 +686,7 @@
                     </OnLoad>
                 </Scripts>
             </Frame>
-            <EditBox name="SpyStatsFilterBox" autoFocus="false" multiLine="false">
+            <EditBox name="SpyStatsFilterBox" autoFocus="false" multiLine="false" inherits="BackdropTemplate">
                 <Anchors>
                     <Anchor point="LEFT" relativeTo="$parentFilterText" relativePoint="RIGHT" />
                 </Anchors>
@@ -775,6 +783,15 @@
         </Frames>
         <Scripts>
             <OnLoad>
+				self:SetBackdrop({
+					bgFile = "Interface/DialogFrame/UI-DialogBox-Background",
+					edgeFile = "Interface/DialogFrame/UI-DialogBox-Border",
+					tile = true,
+					tileEdge = true,
+					tileSize = 32,
+					edgeSize = 32,
+					insets = { left = 4, right = 4, top = 4, bottom = 4 },
+				});
                 self:SetBackdropColor(0,0,0,.95)
             </OnLoad>
             <OnShow>

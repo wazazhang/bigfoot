@@ -45,12 +45,16 @@ local spellNamesByID = {
     [30030] = "Rampage",
     [30033] = "Rampage",
 
+    [34428] = "VictoryRush",
+
     [14251] = "Riposte",
 
     [19306] = "Counterattack",
     [20909] = "Counterattack",
     [20910] = "Counterattack",
     [27067] = "Counterattack",
+
+    [34026] = "KillCommand",
 
     [20662] = "Execute",
     [20661] = "Execute",
@@ -176,6 +180,7 @@ function f:SPELLS_CHANGED()
         local hasOverpower = ns.findHighestRank("Overpower")
         local hasRevenge = ns.findHighestRank("Revenge")
         local hasRampage = ns.findHighestRank("Rampage")
+        local hasVictoryRush = ns.findHighestRank("VictoryRush")
 
         local CheckOverpower = ns.CheckOverpower
         local CheckRevenge = ns.CheckRevenge
@@ -195,6 +200,22 @@ function f:SPELLS_CHANGED()
         if not hasOverpower and not hasRevenge and not hasRampage then
             self:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
             self:SetScript("OnUpdate", nil)
+        end
+
+        if hasVictoryRush then
+            self:RegisterEvent("SPELL_UPDATE_USABLE")
+            local wasUsable = IsUsableSpell(34428)
+            self.SPELL_UPDATE_USABLE = function()
+                local isUsable = IsUsableSpell(34428)
+                if wasUsable ~= isUsable then
+                    if isUsable then
+                        f:Activate("VictoryRush", 20, true)
+                    else
+                        f:Deactivate("VictoryRush")
+                    end
+                    wasUsable = isUsable
+                end
+            end
         end
 
         if ns.findHighestRank("Execute") then
@@ -233,17 +254,28 @@ function f:SPELLS_CHANGED()
         end
 
     elseif class == "HUNTER" then
+
+        local hasMongooseBite = ns.findHighestRank("MongooseBite")
+        local hasCounterattack = ns.findHighestRank("Counterattack")
+        local hasKillCommand = ns.findHighestRank("KillCommand")
+
         self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
         self:SetScript("OnUpdate", self.timerOnUpdate)
-        if ns.findHighestRank("Counterattack") and ns.findHighestRank("MongooseBite") then
+        if hasMongooseBite or hasCounterattack or hasKillCommand then
             local CheckCounterattack = ns.CheckCounterattack
             local CheckMongooseBite = ns.CheckMongooseBite
+            local CheckKillCommand = ns.CheckKillCommand
             procCombatLog = function(...)
-                CheckCounterattack(...)
-                CheckMongooseBite(...)
+                if hasCounterattack then
+                    CheckCounterattack(...)
+                end
+                if hasMongooseBite then
+                    CheckMongooseBite(...)
+                end
+                if hasKillCommand then
+                    CheckKillCommand(...)
+                end
             end
-        elseif ns.findHighestRank("MongooseBite") then
-            procCombatLog = ns.CheckMongooseBite
         else
             self:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
             self:SetScript("OnUpdate", nil)
@@ -349,12 +381,14 @@ local reverseSpellRanks = {
     Rampage = { 30033, 30030, 29801},
     Riposte = { 14251 },
     Counterattack = { 27067, 20910, 20909, 19306 },
+    KillCommand = { 34026 },
     Execute = { 25236, 25234, 20662, 20661, 20660, 20658, 5308 },
     ShadowBolt = { 27209, 25307, 11661, 11660, 11659, 7641, 1106, 1088, 705, 695, 686 },
     Incinerate = { 32231, 29722 },
     MongooseBite = { 36916, 14271, 14270, 14269, 1495 },
     Exorcism = { 27138, 10314, 10313, 10312, 5615, 5614, 879 },
     HammerOfWrath = { 27180, 24239, 24274, 24275 },
+    VictoryRush = { 34428 },
 }
 function ns.findHighestRank(spellName)
     for _, spellID in ipairs(reverseSpellRanks[spellName]) do
@@ -416,7 +450,7 @@ function f:COMBAT_LOG_EVENT_UNFILTERED(event)
     dstGUID, dstName, dstFlags, dstFlags2,
     arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = CombatLogGetCurrentEventInfo()
 
-    local isSrcPlayer = bit_band(srcFlags, AFFILIATION_MINE) == AFFILIATION_MINE
+    local isSrcPlayer = srcGUID == UnitGUID("player") -- bit_band(srcFlags, AFFILIATION_MINE) == AFFILIATION_MINE
     local isDstPlayer = dstGUID == UnitGUID("player")
 
     procCombatLog(eventType, isSrcPlayer, isDstPlayer, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
@@ -585,6 +619,26 @@ function ns.CheckMongooseBite(eventType, isSrcPlayer, isDstPlayer, ...)
         local spellName = select(2, ...)
         if spellName == LocalizedMongooseBite then
             f:Deactivate("MongooseBite", 5)
+        end
+    end
+end
+
+
+function ns.CheckKillCommand(eventType, isSrcPlayer, isDstPlayer, ...)
+    if isSrcPlayer then
+        if eventType == "RANGE_DAMAGE" or eventType == "SWING_DAMAGE" or eventType == "SPELL_DAMAGE" then
+            local isCrit
+            if eventType == "SWING_DAMAGE" then
+                isCrit = select(7, ...)
+            elseif eventType == "RANGE_DAMAGE" then
+                isCrit = select(10, ...)
+            elseif eventType == "SPELL_DAMAGE" then
+                isCrit = select(10, ...)
+            end
+            if isCrit == true then
+                f:Activate("KillCommand", 5)
+            end
+
         end
     end
 end

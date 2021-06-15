@@ -103,6 +103,9 @@ L["The {locale} locale text of the unit #{id} is missing."] = true
 L["The {locale} locale text of the zone #{id} is missing."] = true
 L["Please send a report to the developer."] = true
 L['[ClassicCodex] The quest #%s is missing.'] = true
+L['[ClassicCodex] The item #%s is missing.'] = true
+L['[ClassicCodex] The object #%s is missing.'] = true
+L['[ClassicCodex] The unit #%s is missing.'] = true
 
 -- map.lua
 L["Buy"] = true
@@ -120,6 +123,7 @@ L["All Quests"] = true
 L["Tracked Quests"] = true
 L["Manual Selection"] = true
 L["Hide Quests"] = true
+L['[ClassicCodex] Auto accept/turnin has been suspended to avoid making irreparable wrong choices. Please make your own choice.'] = true
 
 -- ui.lua
 L["DEFAULT_FONT"] = "Fonts\\ARIALN.TTF"

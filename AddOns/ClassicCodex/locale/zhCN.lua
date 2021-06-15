@@ -103,6 +103,9 @@ L["The {locale} locale text of the unit #{id} is missing."] = "单位 #{id} 的�
 L["The {locale} locale text of the zone #{id} is missing."] = "区域 #{id} 的简体中文文本遗失。"
 L["Please send a report to the developer."] = "请向开发者发送一个错误报告。"
 L['[ClassicCodex] The quest #%s is missing.'] = "[ClassicCodex 任务助手] 任务 #%s 数据遗失。"
+L['[ClassicCodex] The item #%s is missing.'] = "[ClassicCodex 任务助手] 物品 #%s 数据遗失。"
+L['[ClassicCodex] The object #%s is missing.'] = "[ClassicCodex 任务助手] 对象 #%s 数据遗失。"
+L['[ClassicCodex] The unit #%s is missing.'] = "[ClassicCodex 任务助手] 单位 #%s 数据遗失。"
 
 -- map.lua
 L["Buy"] = "购买"
@@ -120,6 +123,7 @@ L["All Quests"] = "显示所有任务"
 L["Tracked Quests"] = "显示追踪的任务"
 L["Manual Selection"] = "显示手动选择的任务"
 L["Hide Quests"] = "不显示任务"
+L['[ClassicCodex] Auto accept/turnin has been suspended to avoid making irreparable wrong choices. Please make your own choice.'] = '[ClassicCodex] 为了避免做出无法挽回的错误选择，自动交接任务已暂停。请您手动做出选择。'
 
 -- ui.lua
 L["DEFAULT_FONT"] = "Fonts\\ARHei.TTF"

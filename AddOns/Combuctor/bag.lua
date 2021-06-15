@@ -533,6 +533,7 @@ function Bag:PurchaseSlot()
 	else
 		if not StaticPopupDialogs['CONFIRM_BUY_BANK_SLOT_COMBUCTOR'] then
 			StaticPopupDialogs['CONFIRM_BUY_BANK_SLOT_COMBUCTOR'] = {
+				preferredIndex = STATICPOPUP_NUMDIALOGS,
 				text = CONFIRM_BUY_BANK_SLOT,
 				button1 = YES,
 				button2 = NO,

@@ -6,6 +6,7 @@
 ## Notes-zhTW: 偵測並警告你附近有敵方玩家出沒。
 ## Creator: Immolation
 ## Author: Slipjack
+## TBC-Updator: SideFlanker
 ## X-Credits-zhTW: Localization: Jaspy10
 ## SavedVariables: SpyDB
 ## SavedVariablesPerCharacter: SpyPerCharDB

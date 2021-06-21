@@ -822,7 +822,7 @@ function Spy:CreateMainWindow()
 		})
 		Spy.Colors:RegisterBackground("Alert", "Background", Spy.AlertWindow)
 
-		Spy.AlertWindow.Icon = CreateFrame("Frame", nil, Spy.AlertWindow,"BackdropTemplate")
+		Spy.AlertWindow.Icon = CreateFrame("Frame", nil, Spy.AlertWindow, "BackdropTemplate")
 		Spy.AlertWindow.Icon:ClearAllPoints()
 		Spy.AlertWindow.Icon:SetPoint("TOPLEFT", Spy.AlertWindow, "TOPLEFT", 6, -5)
 		Spy.AlertWindow.Icon:SetWidth(32)
@@ -1246,7 +1246,7 @@ function Spy:ShowAlert(type, name, source, location)
 		Spy.AlertType = type
 	elseif type == "prowl" and Spy.AlertType ~= "kos" and Spy.AlertType ~= "kosguild" then
 		Spy.Colors:RegisterBorder("Alert", "Stealth Border", Spy.AlertWindow)
-		Spy.AlertWindow.Icon:SetBackdrop({ bgFile = "Interface\\Icons\\Ability_Ambush" })
+		Spy.AlertWindow.Icon:SetBackdrop({ bgFile = "Interface\\Icons\\Ability_druid_prowl" })
 		Spy.Colors:RegisterBorder("Alert", "Background", Spy.AlertWindow.Icon)
 		Spy.Colors:RegisterBackground("Alert", "Icon", Spy.AlertWindow.Icon)
 		Spy.Colors:RegisterFont("Alert", "Stealth Text", Spy.AlertWindow.Title)

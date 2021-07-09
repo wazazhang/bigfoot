@@ -417,3 +417,7 @@ function ns.OpenUrlDialog(url)
 
     StaticPopup_Show('MEETINGHORN_COPY_URL', nil, nil, url)
 end
+
+function ns.GetAddonSource()
+    return 0
+end
